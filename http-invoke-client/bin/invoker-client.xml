@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+  
+   <!-- 客户端能够使用下面的代理连接到远程服务 -->
+    <bean id="helloServiceProxy" 
+          class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+        <property name="serviceUrl"
+           value="http://localhost:8080/invoke/rmi.service"/>
+        <property name="serviceInterface"
+            value="edu.bjtu.invoker.IHelloService"/>
+    </bean>
+</beans>
